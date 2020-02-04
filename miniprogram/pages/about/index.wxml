@@ -1,0 +1,23 @@
+<view class="container">
+  <van-cell title="东莞市瑞昂仪器仪表有限公司" icon="location-o" />
+  <van-notice-bar wrapable backgroundColor="#ecf9ff" color="#1989fa" scrollable="false" text="前身为东莞瑞昂仪表厂，成立于2003年，并在2014年通过香港灿达有限电器公司引进了德国仪表业的先进技术，使公司的技术实力更进一步。公司自成立以来一直致力于工业仪表的研究开发，至今已开发出多系列的仪表：高周波、超声波机械专用仪表、智能数显仪表、多功能电力仪表、广角表和出口表等产品，并可按客户要求批量订做特殊规格电表。公司拥有雄厚的科技人员，精湛的生产工艺，一流的生产流程和完善的检测设备，是一家集设计、开发、生产、销售服务为一体的厂家。专业的技术是瑞昂的强力后盾；一流的产品质量加上专业的技术，为产品的售前售后服务提供了保障，十二个月的质保期，让客户买的安心、用的放心。公司宗旨：用户至上，信誉第一，质量第一，勇于创新，竭诚服务。以高效率的工作方式及良好的商业道德认真对待每一位客户，真正让每位客户无任何后顾之忧。" />
+  <!-- <van-collapse value="{{ activeNames }}" bind:change="onChange">
+    <van-collapse-item title="联系我们" name="1">
+      <view >
+        东莞市瑞昂仪器仪表有限公司<br/>
+      联系人：郑先生<br/>
+      总机：0769-22499520<br/>
+      传真：0769-22499520<br/>
+      QQ：1569324884<br/>
+      地址：广东省东莞市沙田镇沙田大道民田工业区163号
+      </view>
+    </van-collapse-item>
+  </van-collapse> -->
+  <van-cell-group>
+    <van-cell title="联系人" value="郑先生" />
+    <van-cell title="总机" value="0769-22499520"/>
+    <van-cell title="传真" value="0769-22499520"/>
+    <van-cell title="QQ" value="1569324884"/>
+    <van-cell title="地址" value="广东省东莞市沙田镇沙田大道民田工业区163号"/>
+  </van-cell-group>
+</view>

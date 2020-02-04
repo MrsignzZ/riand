@@ -1,0 +1,53 @@
+<view class="container">
+  <swiper class="swiper" indicator-dots="true" indicator-active-color="true" autoplay="true">
+    <block wx:for="{{imgSrc}}" wx:key="*this">
+      <swiper-item class="swiper-item" item-id="">
+        <image class="swiper-item-img" src="{{item}}" alt="" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <van-row>
+    <van-col span="6">
+      <van-sidebar active-key="{{ activeKey }}" bind:change="onChange">
+        <van-sidebar-item wx:for="{{instruments}}" wx:key="item" title="{{item.title}}" />
+      </van-sidebar>
+    </van-col>
+    <van-col span="18">
+      <view class="content">
+        <van-tabs active="{{ activeType }}" line-height="0px" bind:change="changeType">
+          <van-tab wx:for="{{currentInstruments.details}}" wx:for-item="detail" title="{{detail.type}}">
+            <van-card wx:for="{{detail.items}}" wx:key="*this" desc="型号: {{item.name}}" title="{{item.type}}{{item.range}}" centered="true" thumb="{{item.imgUrls[0]}}">
+              <view slot="footer">
+                <van-button size="mini" data-detail="{{item}}" block="true" round plain type="info" bind:click="openDetail">
+                  查看详情
+                </van-button>
+              </view>
+            </van-card>
+          </van-tab>
+        </van-tabs>
+      </view>
+    </van-col>
+  </van-row>
+  <van-action-sheet show="{{ show }}" title="详情" bind:close="onClose" bind:select="onSelect">
+    <view class="detail">
+      <swiper class="detail-swiper" indicator-dots="true" indicator-active-color="true" autoplay="true">
+        <block wx:for="{{currentInstrument.imgUrls}}" wx:key="*this">
+          <swiper-item class="detail-item" item-id="">
+            <image class="detail-item-img" mode="aspectFit" src="{{item}}" alt="" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <van-cell-group>
+        <van-cell title="品牌" value="{{currentInstrument.brand}}" />
+        <van-cell title="型号" value="{{currentInstrument.name}}" />
+        <van-cell title="加工定制" value="{{currentInstrument.customed ? '是' : '否'}}" />
+        <van-cell title="类型" value="{{currentInstrument.type}}" />
+        <van-cell title="测量范围" value="{{currentInstrument.range}}" />
+        <van-cell title="准确度" value="{{currentInstrument.precision}}" />
+        <van-cell title="功率" value="{{currentInstrument.power}}" />
+        <van-cell title="外形尺寸" value="{{currentInstrument.size}}" />
+        <van-cell title="产品历程" center label="{{currentInstrument.process}}" border="{{ false }}" />
+      </van-cell-group>
+    </view>
+  </van-action-sheet>
+</view>
